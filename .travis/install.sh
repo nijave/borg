@@ -9,10 +9,8 @@ if [[ "$(uname -s)" == 'Darwin' ]]; then
     export HOMEBREW_TEMP=~/brew-temp
     mkdir $HOMEBREW_LOGS
     mkdir $HOMEBREW_TEMP
-    # brew update
-    if [[ "${OPENSSL}" != "0.9.8" ]]; then
-        brew outdated openssl || brew upgrade openssl
-    fi
+
+    brew install rbenv/tap/openssl@1.0
 
     if which pyenv > /dev/null; then
         eval "$(pyenv init -)"
